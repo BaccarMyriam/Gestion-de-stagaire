@@ -1,0 +1,154 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.header .log {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #007BFF;
+}
+
+#menu-icon {
+    display: none;
+}
+
+/* Register Section */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+}
+
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #007BFF;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-text {
+    text-align: left;
+    flex: 1;
+}
+
+.footer-icon {
+    text-align: right;
+    flex: 1;
+}
+
+.footer-icon a {
+    color: #fff;
+    font-size: 2em;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.footer-icon a:hover {
+    color: #3498db;
+}
+
+
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+        font-size: 1.8rem;
+        color: white;
+    }
+
+    .form-container {
+        height: auto;
+        padding: 20px;
+    }
+
+    form {
+        width: 90%;
+    }
+}

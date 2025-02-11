@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+    <!-- Lien vers Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="admin">
+            <h2>Bienvenue</h2>
+            <p>Mr Mohamed Essid</p>
+        </div>
+        <!-- Barre de navigation -->
+         <nav class="navbar">
+            <a routerLink="/dashbord-admin" >
+                <i class="fas fa-home"></i>
+               <span>Accueil</span> 
+            </a>
+
+            <a routerLink="/demande" >
+                <i class="fas fa-briefcase"></i>
+               <span>Demande</span> 
+            </a>
+
+            <a routerLink="/project" >
+                <i class="fas fa-folder-plus"></i>
+               <span>Nouveau projet</span> 
+            </a>
+
+            <a routerLink="/contact-admin" >
+                <i class="fas fa-envelope"></i>
+               <span>Contact</span> 
+            </a>
+
+            <a routerLink="/fback" >
+                <i class="fas fa-comments"></i>
+               <span>Feedback</span> 
+            </a>
+
+            <a routerLink="/dashbordPrincipale" >
+                <i class="fas fa-sign-out-alt"></i>
+               <span>Deconnexion</span> 
+            </a>
+         </nav>
+    </header>
+
+    <div class="main-content">
+        <section class="users-table" id="usersTable">
+          <h2 class="heading">Liste des utilisateurs</h2>
+          <table border="1">
+            <thead>
+              <tr>
+                <th>CIN</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Image</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td>{{ user.cin }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                  <img [src]="user.image" alt="Image" width="50" height="50" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+      
+</body>
+</html>

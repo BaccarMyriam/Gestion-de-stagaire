@@ -1,0 +1,16 @@
+<div class="form-container">
+  <h2>Formulaire de Remarque</h2>
+  <form (ngSubmit)="updateRemarque()">
+    <div class="form-group">
+      <label for="remarque">Remarque :</label>
+      <textarea
+        id="remarque"
+        [(ngModel)]="remarque"
+        name="remarque"
+        rows="5"
+        required
+      ></textarea>
+    </div>
+    <button type="submit" [disabled]="!remarque">Mise à jour</button>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+<h1>Modifier l'état</h1>
+<form (ngSubmit)="onSubmit()">
+  <label for="etat">Sélectionnez un état :</label>
+  <select id="etat" [(ngModel)]="etat" name="etat" required>
+    <option *ngFor="let option of etats" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+
+  <br /><br />
+  <button type="submit">Mettre à jour</button>
+</form>

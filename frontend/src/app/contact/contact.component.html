@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <title>Contact</title>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="log">AddInn</div>
+    <i class="bx bx-menu" id="menu-icon"></i>
+    <nav class="navbar">
+      <a routerLink="/dashbordPrincipale">Home</a>
+      <a routerLink="/about">About us</a>
+      <a routerLink="/service">Services</a>
+      <a routerLink="/offre">Offres</a>
+      <a routerLink="/stage">Stage</a>
+      <a routerLink="/contact">Contact</a>
+      <a routerLink="/feedback">Feedback</a>
+      <a routerLink="/register">Register</a>
+    </nav>
+  </header>
+  <!-- End Header -->
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Us!</span></h2>
+    <form (ngSubmit)="onSubmit()" #projectForm="ngForm" novalidate>
+      <div class="input-box">
+        <input 
+          [(ngModel)]="Cin" 
+          id="Cin" 
+          name="Cin" 
+          type="text" 
+          placeholder="CIN" 
+          required 
+          minlength="8" 
+          maxlength="8"
+          pattern="[0-9]+" 
+        />
+      </div>
+      <div class="input-box">
+        <input 
+          [(ngModel)]="np" 
+          id="np" 
+          name="np" 
+          type="text" 
+          placeholder="Full name" 
+          required 
+          minlength="3"
+        />
+      </div>
+      <div class="input-box">
+        <input 
+          [(ngModel)]="email" 
+          id="email" 
+          name="email" 
+          type="email" 
+          placeholder="Email" 
+          required
+        />
+      </div>
+      <div class="input-box">
+        <input 
+          [(ngModel)]="telephone" 
+          id="telephone" 
+          name="telephone" 
+          type="tel" 
+          placeholder="Votre tel" 
+          required 
+          pattern="^\+?[0-9]{8,15}$"
+        />
+      </div>
+      <div class="textarea-box">
+        <textarea [(ngModel)]="tarea"  id="tarea" name="tarea" 
+          placeholder="Your message" 
+          required 
+          minlength="10"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn">Contactez-nous</button>
+    </form>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>©2023 ADDINN Group. Tous droits réservés</p>
+    </div>
+    <div class="footer-icon">
+      <a href="#home">
+        <i class="bx bx-up-arrow-circle"></i>
+      </a>
+    </div>
+  </footer>
+  <!-- End Footer -->
+</body>
+</html>

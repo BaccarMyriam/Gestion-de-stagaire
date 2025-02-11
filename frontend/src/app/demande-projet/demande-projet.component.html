@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="log">AddInn</div>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a routerLink="/dashbordPrincipale">Home</a>
+            <a routerLink="/about">About us</a>
+            <a routerLink="/service">Services</a>
+            <a routerLink="/offre">Offres</a>
+            <a routerLink="/stage">Stage</a>
+            <a routerLink="/contact">Contact</a>
+            <a routerLink="/feedback">Feedback</a>
+            <a routerLink="/login">Se connecter</a>
+        </nav>
+    </header>
+    <!-- End Header -->
+<form (ngSubmit)="onSubmit()">
+    <h1>Demande <span>de stage</span></h1>
+    <div class="input-form">
+        
+        <input type="text" id="cin" [(ngModel)]="form['cin']" name="cin" placeholder="Votre cin" required>
+
+       
+        <input type="text" id="nom" [(ngModel)]="form['nom']" name="nom" placeholder="Votre nom" required>
+
+        
+        <input type="email" id="email" [(ngModel)]="form['email']" name="email" placeholder="Votre email" required>
+
+        
+        <input type="tel" id="tel" [(ngModel)]="form['tel']" name="tel" placeholder="Votre téléphone" required>
+
+        <label for="cv">CV</label>
+        <input type="file" id="cv" (change)="onFileChange($event, 'cv')" required>
+
+        <label for="lettre">Demande de stage</label>
+        <input type="file" id="lettre" (change)="onFileChange($event, 'lettre')" required>
+
+        <label for="convention">Convention de stage</label>
+        <input type="file" id="convention" (change)="onFileChange($event, 'convention')" required>
+
+        <label for="stage">Types de stage</label>
+        <select id="stage" [(ngModel)]="selectedStage" (change)="onStageChange()" name="stage">
+            <option value="init">Initiation</option>
+            <option value="perf">Perfectionnement</option>
+            <option value="pfe">PFE</option>
+            <option value="db">Data & BI</option>
+            <option value="soft">Software</option>
+        </select>
+
+        <!-- Conteneur des projets dynamiques -->
+        <div *ngIf="projects.length > 0" id="projects-container">
+            <p>Choisissez un projet :</p>
+            <label *ngFor="let project of projects">
+                <input type="radio" name="project" [value]="project" [(ngModel)]="form['project']">
+                {{ project }}
+            </label>
+        </div>
+
+        <button type="submit">Envoyer</button>
+    </div>
+</form>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-text">
+        <p>©2023 ADDINN Group. Tous droits réservés</p>
+    </div>
+    <div class="footer-icon">
+        <a routerLink="/dashbordPrincipale">
+            <i class='bx bx-up-arrow-circle'></i>
+        </a>
+    </div>
+</footer>
+<!-- End Footer -->
+</body>
+</html>

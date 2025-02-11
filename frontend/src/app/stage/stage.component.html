@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+ <!-- Ajoutez le lien vers votre CSS -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="log">AddInn</div>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a routerLink="/dashbordPrincipale">Home</a>
+            <a routerLink="/about">About us</a>
+            <a routerLink="/service">Services</a>
+            <a routerLink="/offre">Offres</a>
+            <a routerLink="/stage">Stage</a>
+            <a routerLink="/contact">Contact</a>
+            <a routerLink="/feedback">Feedback</a>
+            <a routerLink="/register">Register</a>
+        </nav>
+    </header>
+
+    <!-- Stage Section -->
+    <main>
+        <section class="stage">
+            <h1>Types <span>Stage</span></h1>
+            <div class="stage-container">
+                <!-- Stage de licence -->
+                <div class="card">
+                    <img src="assets/images/stage.jpg" alt="Stage licence">
+                    <h3>Stage de Licence</h3>
+                    <p>Initiation, Perfectionnement, PFE</p>
+                    <a routerLink="/demande-projet" class="btn">Demande</a>
+                    <a routerLink="/ajout-projet" class="btn">Ajouter un projet</a>
+                </div>
+                <!-- Data & BI -->
+                <div class="card">
+                    <img src="assets/images/bianddata.jpg" alt="Data & BI">
+                    <h3>Les Projets Data & BI</h3>
+                    <p>Les données brutes, lorsqu'elles sont analysées à l'aide d'outils BI, permettent aux entreprises de prendre des décisions éclairées et stratégiques.</p>
+                    <a routerLink="/demande-projet" class="btn">Demande</a>
+                    <a routerLink="/ajout-projet" class="btn">Ajouter un projet</a>
+                </div>
+                <!-- Software -->
+                <div class="card">
+                    <img src="assets/images/software.jpg" alt="Software">
+                    <h3>Les Projets Software</h3>
+                    <p>Les logiciels de gestion de projet permettent de coordonner efficacement les équipes et de suivre l'avancement des tâches en temps réel.</p>
+                    <a routerLink="/demande-projet" class="btn">Demande</a>
+                    <a routerLink="/ajout-projet" class="btn">Ajouter un projet</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>©2023 ADDINN Group. Tous droits réservés</p>
+        </div>
+        <div class="footer-icon">
+            <a href="#">
+                <i class='bx bx-up-arrow-circle'></i>
+            </a>
+        </div>
+    </footer>
+
+
+</body>
+</html>

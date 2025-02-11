@@ -1,0 +1,17 @@
+<div class="form-container">
+    <h2>Formulaire de Réponse</h2>
+    <form (ngSubmit)="Reponsefeed()">
+      <div class="form-group">
+        <label for="reponse">Réponse :</label>
+        <textarea
+          id="reponse"
+          [(ngModel)]="reponse"
+          name="reponse"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" [disabled]="!reponse.trim()">Mise à jour</button>
+    </form>
+  </div>
+  

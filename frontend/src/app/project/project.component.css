@@ -1,0 +1,216 @@
+/* Reset des marges et paddings par défaut */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Fond gris très clair pour la page */
+    color: #333; /* Texte sombre par défaut */
+    line-height: 1.6; /* Améliore la lisibilité du texte */
+}
+
+/* Conteneur principal */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Style de la navbar */
+.header {
+    width: 250px; /* Largeur de la navbar */
+    background-color: #ffffff; /* Fond blanc */
+    color: #333; /* Texte sombre */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #e0e0e0; /* Bordure grise claire */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); /* Ombre portée subtile */
+}
+
+/* Style de la section admin */
+.admin h2 {
+    color: #007BFF; /* Texte bleu */
+    margin: 10px 0 5px;
+    font-size: 1.5rem; /* Taille de police plus grande */
+}
+
+.admin p {
+    color: #666; /* Texte gris */
+    font-size: 0.9rem; /* Taille de police plus petite */
+}
+
+/* Style des liens de la navbar */
+.navbar {
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    width: 100%;
+    margin-top: 20px; /* Espacement depuis le haut */
+}
+
+.navbar a {
+    color: #333; /* Texte sombre */
+    text-decoration: none;
+    padding: 10px 15px; /* Espacement interne */
+    display: flex;
+    align-items: center;
+    margin: 8px 0; /* Espacement entre les liens */
+    border-radius: 8px; /* Coins arrondis */
+    transition: all 0.3s ease; /* Transition fluide */
+    background-color: #f9f9f9; /* Fond gris très clair */
+}
+
+.navbar a i {
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+    font-size: 1.1rem; /* Taille des icônes */
+    color: #666; /* Couleur des icônes */
+    transition: color 0.3s ease; /* Transition fluide pour les icônes */
+}
+
+.navbar a:hover {
+    background-color: #007BFF; /* Fond bleu au survol */
+    color: #ffffff; /* Texte blanc au survol */
+    transform: translateX(5px); /* Légère translation à droite */
+}
+
+.navbar a:hover i {
+    color: #ffffff; /* Icônes blanches au survol */
+}
+
+.navbar a.active {
+    background-color: #007BFF; /* Fond bleu pour le lien actif */
+    color: #ffffff; /* Texte blanc pour le lien actif */
+}
+
+.navbar a.active i {
+    color: #ffffff; /* Icônes blanches pour le lien actif */
+}
+
+/* Contenu principal */
+.main-content {
+    margin-left: 250px; /* Marge à gauche égale à la largeur de la navbar */
+    width: calc(100% - 250px); /* Largeur du contenu moins la largeur de la navbar */
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+/* Style des sections */
+.nouveauProjet {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Fond blanc */
+    padding: 25px;
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre portée pour un effet de carte */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide */
+    border: 1px solid #e0e0e0; /* Bordure subtile */
+}
+
+.nouveauProjet:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
+}
+
+/* Style du tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff; /* Fond blanc */
+    border-radius: 10px; /* Coins arrondis */
+    overflow: hidden; /* Masquer les coins arrondis des cellules */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+th, td {
+    padding: 12px 15px; /* Espacement interne */
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0; /* Bordure grise claire */
+}
+
+th {
+    background-color: #007BFF; /* Fond bleu pour les en-têtes */
+    color: white; /* Texte blanc */
+    font-weight: 600; /* Texte en gras */
+}
+
+td {
+    color: #333; /* Texte sombre */
+}
+
+/* Style des icônes dans le tableau */
+td i {
+    font-size: 1.2rem; /* Taille des icônes */
+    color: #666; /* Couleur des icônes */
+    cursor: pointer; /* Curseur pointer */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition fluide */
+}
+
+td i:hover {
+    color: #007BFF; /* Couleur bleue au survol */
+    transform: scale(1.2); /* Légère animation au survol */
+}
+
+/* Style pour les boutons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF; /* Fond bleu */
+    color: white; /* Texte blanc */
+    text-decoration: none;
+    border-radius: 8px; /* Coins arrondis */
+    margin-top: 15px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition fluide */
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Fond bleu foncé au survol */
+    transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px;
+        border-right: none;
+        box-shadow: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto; /* Ajouter un défilement horizontal pour les petits écrans */
+        white-space: nowrap; /* Empêcher le texte de passer à la ligne */
+    }
+
+    th, td {
+        min-width: 120px; /* Largeur minimale des cellules */
+    }
+}
+h2{
+    color: #007BFF;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+span{
+    color: #007BFF;
+    font-weight: 700;
+}
+.navbar a:hover span{
+    color: #ffffff;
+    font-weight: 700;
+}

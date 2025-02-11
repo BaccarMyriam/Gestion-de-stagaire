@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+    <!-- Lien vers Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- En-tête de la page -->
+    <header class="header">
+        <!-- Section utilisateur -->
+        <div class="user">
+            <img src="assets/images/user.jpg" alt="Photo de profil de l'utilisateur">
+            <h2 class="venue">Bienvenue</h2>
+            <p>Stagiaire</p>
+        </div>
+
+        <!-- Barre de navigation -->
+        <nav class="navbar" aria-label="Navigation principale">
+            <a routerLink="/user">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <span>Accueil</span>
+            </a>
+            <a routerLink="/portflio">
+                <i class="fas fa-briefcase" aria-hidden="true"></i>
+                <span>Demande</span>
+            </a>
+            <a routerLink="/nproject">
+                <i class="fas fa-folder-plus" aria-hidden="true"></i>
+                <span>Nouveau projet</span>
+            </a>
+            <a routerLink="/contact-user">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span>Contact</span>
+            </a>
+            <a routerLink="/feed">
+                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                <span>Feedback</span>
+            </a>
+            <a href="#out">
+                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                <span>Déconnexion</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Contenu principal de la page -->
+    <div class="main-content">
+        <section class="nouveauProjet" id="nouveauProjet">
+          <h2 class="heading">Contact</h2>
+          <div *ngIf="contact && contact.length > 0; else noContact">
+            <div *ngIf="contact && contact.length > 0; else noContact">
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>CIN</th>
+                      <th>Nom</th>
+                      <th>Email</th>
+                      <th>Telephone</th>
+                      <th>Message</th>
+                      <th>Reponse</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of contact">
+                      <td>{{ item.Cin }}</td>
+                      <td>{{ item.np }}</td>
+                      <td>{{ item.email }}</td>
+                      <td>{{ item.telephone }}</td>
+                      <td>{{ item.tarea }}</td>
+                      <td>{{ item.reponse }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+          <ng-template #noContact>
+            <p>Aucun contact trouvé.</p>
+          </ng-template>
+        </section>
+        <hr>
+      </div>
+</body>
+</html>

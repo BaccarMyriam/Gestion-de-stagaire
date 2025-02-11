@@ -1,0 +1,336 @@
+/* Reset des marges et paddings par défaut */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Fond gris très clair pour la page */
+    color: #333; /* Texte sombre par défaut */
+    line-height: 1.6; /* Améliore la lisibilité du texte */
+}
+
+/* Conteneur principal */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Style de la navbar */
+.header {
+    width: 250px; /* Largeur de la navbar */
+    background-color: #ffffff; /* Fond blanc */
+    color: #333; /* Texte sombre */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #e0e0e0; /* Bordure grise claire */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); /* Ombre portée subtile */
+}
+
+/* Style du texte du header */
+.admin h2 {
+    color: #007BFF; /* Texte bleu */
+    margin: 10px 0 5px;
+    font-size: 1.5rem;
+}
+
+.admin p {
+    color: #666; /* Texte gris */
+    font-size: 0.9rem;
+}
+
+/* Style des liens de la navbar */
+.navbar {
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    width: 100%;
+    margin-top: 20px; /* Espacement depuis le haut */
+}
+
+.navbar a {
+    color: #333; /* Texte sombre */
+    text-decoration: none;
+    padding: 10px 20px; /* Espacement interne ajusté */
+    display: flex;
+    align-items: center;
+    margin: 8px 0; /* Espacement entre les liens */
+    border-radius: 8px; /* Coins arrondis */
+    transition: all 0.3s ease; /* Transition fluide */
+    background-color: #f9f9f9; /* Fond gris clair */
+}
+
+.navbar a i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Hover effect sur les liens */
+.navbar a:hover {
+    background-color: #007BFF;
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.navbar a:hover i {
+    color: #ffffff;
+}
+
+/* Lien actif */
+.navbar a.active {
+    background-color: #007BFF;
+    color: #ffffff;
+}
+
+.navbar a.active i {
+    color: #ffffff;
+}
+
+/* Contenu principal */
+.main-content {
+    margin-left: 250px; /* Marge à gauche égale à la largeur de la navbar */
+    width: calc(100% - 250px); /* Largeur du contenu moins la largeur de la navbar */
+    padding: 30px;
+}
+
+/* Style de la table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+img {
+    border-radius: 50%;
+}
+
+/* Style pour les boutons */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style du formulaire */
+.portfolio-form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Bouton dans le formulaire */
+.portfolio-form .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-form .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Section Nouveau Projet */
+.nouveauProjet {
+    text-align: center;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.nouveauProjet p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Texte dynamique */
+span {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* Section Feedbacks */
+.feedbacks-container {
+    margin-left: 270px; /* Décalage avec la navbar */
+    padding: 20px;
+}
+
+.feedbacks-container h2 {
+    text-align: center;
+    color: #007BFF;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Réponses aux feedbacks */
+.feedbacks-container i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #007BFF;
+    transition: color 0.3s ease;
+}
+
+.feedbacks-container i:hover {
+    color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        width: 200px; /* Réduire la largeur de la navbar */
+    }
+    .main-content {
+        margin-left: 200px; /* Ajuster le contenu */
+        width: calc(100% - 200px);
+    }
+}
+/* Style pour le conteneur des feedbacks */
+.feedbacks-container {
+    margin-left: 250px; /* Marge à gauche égale à la largeur de la navbar */
+    width: calc(100% - 250px); /* Largeur du contenu moins la largeur de la navbar */
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Style pour la table */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Fusionner les bordures des cellules */
+    margin-top: 20px;
+    background-color: #ffffff; /* Fond blanc */
+    border-radius: 12px; /* Coins arrondis */
+    overflow: hidden; /* Masquer les bordures qui dépassent */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre portée pour un effet de carte */
+}
+
+/* Style pour l'en-tête de la table */
+thead {
+    background-color: #007BFF; /* Fond bleu pour l'en-tête */
+    color: #ffffff; /* Texte blanc */
+}
+
+/* Style pour les cellules de l'en-tête */
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Style pour les cellules du corps de la table */
+td {
+    padding: 12px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: #333; /* Texte sombre */
+    border-bottom: 1px solid #e0e0e0; /* Bordure grise claire entre les lignes */
+}
+
+/* Style pour les lignes impaires du corps de la table */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Fond gris très clair pour les lignes impaires */
+}
+
+/* Style pour les lignes au survol */
+tbody tr:hover {
+    background-color: #f1f1f1; /* Fond gris clair au survol */
+    transition: background-color 0.3s ease; /* Transition fluide */
+}
+
+/* Style pour la dernière ligne (pas de bordure en bas) */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Style pour les cellules de la colonne "Réponse" */
+td:last-child {
+    font-weight: bold;
+    color: #007BFF; /* Texte bleu pour les réponses */
+}
+
+/* Style pour les cellules de la colonne "Message" */
+td:nth-child(3) {
+    max-width: 300px; /* Limite la largeur de la colonne "Message" */
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    overflow: hidden; /* Cache le texte qui dépasse */
+    text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
+}
+.navbar a:hover span{
+    color:white;
+}
+th{
+    background-color: #007BFF;
+    color: white;
+}
+/* Style pour les boutons dans la table (si vous en ajoutez) */
+table .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+table .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Légère élévation au survol */
+}

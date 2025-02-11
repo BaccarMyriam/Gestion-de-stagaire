@@ -1,0 +1,59 @@
+import { Routes } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { DashbordAdminComponent } from './dashbord-admin/dashbord-admin.component';
+import { PortflioComponent } from './portflio/portflio.component';
+import { NprojectComponent } from './nproject/nproject.component';
+import { DashbordPrincipaleComponent } from './dashbord-principale/dashbord-principale.component';
+import { AboutComponent } from './about/about.component';
+import { ServiceComponent } from './service/service.component';
+import { OffreComponent } from './offre/offre.component';
+import { ContactComponent } from './contact/contact.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { StageComponent } from './stage/stage.component';
+import { FeedComponent } from './feed/feed.component';
+import { ContactUserComponent } from './contact-user/contact-user.component';
+import { FbackComponent } from './fback/fback.component';
+import { ContactAdminComponent } from './contact-admin/contact-admin.component';
+import { DemandeComponent } from './demande/demande.component';
+import { ProjectComponent } from './project/project.component';
+import { DemandeProjetComponent } from './demande-projet/demande-projet.component';
+import { AjoutProjetComponent } from './ajout-projet/ajout-projet.component';
+import { AjoutRemarqueComponent } from './ajout-remarque/ajout-remarque.component';
+import { ModifierEtatComponent } from './modifier-etat/modifier-etat.component';
+import { AjoutReponseComponent } from './ajout-reponse/ajout-reponse.component';
+import { RemarqueComponent } from './remarque/remarque.component';
+import { EtatprojetComponent } from './etatprojet/etatprojet.component';
+import { FeedReponseComponent } from './feed-reponse/feed-reponse.component';
+
+export const routes: Routes = [
+  { path: '', redirectTo: '/dashbordPrincipale', pathMatch: 'full' }, // Redirection par défaut
+  { path: 'dashbordPrincipale', component: DashbordPrincipaleComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'portflio', component: PortflioComponent },
+  { path: 'nproject', component: NprojectComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'service', component: ServiceComponent },
+  { path: 'offre', component: OffreComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'feedback', component: FeedbackComponent },
+  { path: 'stage', component: StageComponent },
+  { path: 'fback', component: FbackComponent },
+  { path: 'contact-admin', component: ContactAdminComponent },
+  { path: 'demande', component: DemandeComponent },
+  { path: 'project', component: ProjectComponent },
+  { path: 'feed', component: FeedComponent },
+  { path: 'contact-user', component: ContactUserComponent },
+  { path: 'demande-projet', component: DemandeProjetComponent },
+  { path: 'ajout-projet', component: AjoutProjetComponent },
+  { path: 'dashbord-admin', component: DashbordAdminComponent },
+  { path: 'ajout-remarque/:cin', component: AjoutRemarqueComponent },
+  { path: 'modifier-etat/:cin', component: ModifierEtatComponent },
+  { path: 'ajout-reponse/:Cin', component: AjoutReponseComponent },
+  { path: 'feed-reponse/:email', component: FeedReponseComponent },
+  { path: 'remarque/:cin', component: RemarqueComponent },
+  { path: 'etatprojet/:cin', component: EtatprojetComponent },
+];

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div>AddInn</div>
+        <nav>
+            <a routerLink="/dashbordPrincipale">Home</a>
+            <a routerLink="/about">About us</a>
+            <a routerLink="/service">Services</a>
+            <a routerLink="/offre">Offres</a>
+            <a routerLink="/stage">Stage</a>
+            <a routerLink="/contact">Contact</a>
+            <a routerLink="/feedback">Feedback</a>
+            <a routerLink="/register">Register</a>
+        </nav>
+    </header>
+    <!-- End Header -->
+
+    <!-- Feedback Section -->
+    <main>
+        <h1>Feedback</h1>
+        <div class="feedback-container">
+          <form (ngSubmit)="sendFeedback()">
+            <div class="form-group">
+
+              <input type="text" id="name" [(ngModel)]="feedbackForm.name" name="name" placeholder="Entrez votre nom" required />
+            </div>
+        
+            <div class="form-group">
+
+              <input type="email" id="email" [(ngModel)]="feedbackForm.email" name="email" placeholder="Entrez votre email" required />
+            </div>
+        
+            <div class="form-group">
+
+              <textarea id="message" [(ngModel)]="feedbackForm.message" name="message" placeholder="Entrez votre message" required></textarea>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+        
+        
+    </main>
+    <!-- End Feedback Section -->
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>©2023 ADDINN Group. Tous droits réservés</p>
+    </div>
+    <div class="footer-icon">
+      <a href="#home">
+        <i class="bx bx-up-arrow-circle"></i>
+      </a>
+    </div>
+  </footer>
+  <!-- End Footer -->
+</body>
+</html>

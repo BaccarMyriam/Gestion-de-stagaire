@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+    <!-- Lien vers Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="admin">
+            <h2>Bienvenue</h2>
+            <p>Mr Mohamed Essid</p>
+        </div>
+        <!-- Barre de navigation -->
+         <nav class="navbar">
+            <a routerLink="/dashbord-admin" >
+                <i class="fas fa-home"></i>
+               <span>Accueil</span> 
+            </a>
+
+            <a routerLink="/demande" >
+                <i class="fas fa-briefcase"></i>
+               <span>Demande</span> 
+            </a>
+
+            <a routerLink="/project" >
+                <i class="fas fa-folder-plus"></i>
+               <span>Nouveau projet</span> 
+            </a>
+
+            <a routerLink="/contact-admin" >
+                <i class="fas fa-envelope"></i>
+               <span>Contact</span> 
+            </a>
+
+            <a routerLink="/fback" >
+                <i class="fas fa-comments"></i>
+               <span>Feedback</span> 
+            </a>
+
+            <a routerLink="/dashbordPrincipale" >
+                <i class="fas fa-sign-out-alt"></i>
+               <span>Deconnexion</span> 
+            </a>
+         </nav>
+    </header>
+
+    <div class="main-content">
+        <!-- Section Liste des Demandes -->
+        <div class="demandes-container">
+            <h2>Liste des Demandes de Projet</h2>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>CIN</th>
+                  <th>Nom</th>
+                  <th>Email</th>
+                  <th>Téléphone</th>
+                  <th>Cv</th>
+                  <th>Lettre</th>
+                  <th>Convention</th>
+                  <th>Stage</th>
+                  <th>Projet</th>
+                  <th>État</th>
+                  <th>Remarque</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let demande of demandes">
+                  <td>{{ demande.cin }}</td>
+                  <td>{{ demande.nom }}</td>
+                  <td>{{ demande.email }}</td>
+                  <td>{{ demande.tel }}</td>
+                  <td>{{ demande.cv }}</td>
+                  <td>{{ demande.lettre }}</td>
+                  <td>{{ demande.convention }}</td>
+                  <td>{{ demande.stage }}</td>
+                  <td>{{ demande.project }}</td>
+                  <td>
+                    {{ demande.etat }}
+                    <i class="fas fa-edit"  (click)="goToEditPage(demande.cin)"></i>
+                  </td>
+                  <td>
+                    {{ demande.remarque }}
+                    <i class="fas fa-comment-dots"  (click)="goToRemarkPage(demande.cin)"></i>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+    </div>
+</body>
+</html>

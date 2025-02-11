@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+    <!-- Lien vers Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="user">
+            <img src="assets/images/user.jpg" alt="user">
+            <h2>Bienvenue</h2>
+            <p>Stagiaire</p>
+        </div>
+        <!-- Barre de navigation -->
+        <nav class="navbar">
+            <a routerLink="/user" >
+                <i class="fas fa-home"></i>
+                <span>Accueil</span>
+            </a>
+            <a routerLink="/portflio">
+                <i class="fas fa-briefcase"></i>
+                <span>Demande</span>
+            </a>
+            <a routerLink="/nproject">
+                <i class="fas fa-folder-plus"></i>
+                <span>Nouveau projet</span>
+            </a>
+            <a routerLink="/contact-user">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+            <a routerLink="/feed">
+                <i class="fas fa-comment-dots"></i>
+                <span>Feedback</span>
+            </a>
+            <a href="#out">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Déconnexion</span>
+            </a>
+        </nav>
+    </header>
+    <div class="feedbacks-container">
+        <h2>Liste des Feedbacks</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th>Réponse</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let feedback of feedbacks">
+              <td>{{ feedback.name }}</td>
+              <td>{{ feedback.email }}</td>
+              <td>{{ feedback.message }}</td>
+              <td>{{ feedback.reponse}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+</body>
+</html>
