@@ -1,3 +1,4 @@
+<!-- dashbord-admin.component.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -47,33 +48,37 @@
          </nav>
     </header>
 
-    <div class="main-content">
-        <section class="users-table" id="usersTable">
-          <h2 class="heading">Liste des utilisateurs</h2>
-          <table border="1">
-            <thead>
-              <tr>
-                <th>CIN</th>
-                <th>Nom</th>
-                <th>Email</th>
-                <th>Rôle</th>
-                <th>Image</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let user of users">
-                <td>{{ user.cin }}</td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.role }}</td>
-                <td>
-                  <img [src]="user.image" alt="Image" width="50" height="50" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </div>
-      
+    <!-- dashbord-admin.component.html -->
+<div class="main-content">
+  <section class="users-table" id="usersTable">
+    <h2 class="heading">Liste des utilisateurs</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>CIN</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Rôle</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.cin }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <img [src]="user.image" alt="Image" width="50" height="50" />
+          </td>
+          <td>
+            <button (click)="deleteUser(user.cin)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
 </body>
 </html>

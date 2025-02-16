@@ -272,4 +272,11 @@ updateReponse(cin: string, reponse: string): Observable<any> {
         })
       );
     }
+    // Methode pour delete reponse un stagiaire
+    deleteUser(cin: string): Observable<any> {
+      return this.http.post('http://localhost/Backend-Addinn/api/admin/deleteUser.php', { cin }, {
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+    
 }

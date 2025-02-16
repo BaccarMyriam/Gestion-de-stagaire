@@ -62,18 +62,10 @@ h2.heading span {
 span{
     color: #3498db;
 }
-.input-form button {
-    padding: 12px 24px;
-    background: linear-gradient(135deg, #3498db, #2c8dcb);
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    border-radius: 25px;
-    font-size: 1.1em;
-    transition: transform 0.3s, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .input-form button:hover {
@@ -127,6 +119,7 @@ span{
 
 .header .navbar a:hover {
     color: #3498db;
+    
 }
 
 #menu-icon {
@@ -168,6 +161,18 @@ span{
     color: #3498db;
 }
 
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3498db, #2c8dcb);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
