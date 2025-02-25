@@ -1,0 +1,26 @@
+<!-- attestation.component.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de PDF</title>
+</head>
+<body>
+    <h2>Uploader une attestation de stage (PDF)</h2>
+    <form (ngSubmit)="submitAttestation()">
+        <label for="pdfFile">Sélectionnez un fichier PDF :</label>
+        <input 
+          type="file" 
+          id="pdfFile" 
+          name="pdfFile" 
+          (change)="onFileChange($event)" 
+          accept=".pdf" 
+          required
+        >
+        <br><br>
+        <button type="submit">Envoyer</button>
+        <a routerLink="/evalution" class="btn">Retour</a>
+    </form>
+</body>
+</html>

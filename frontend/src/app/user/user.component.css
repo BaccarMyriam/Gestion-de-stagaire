@@ -1,92 +1,94 @@
-/* styles.css */
 /* Reset des marges et paddings par défaut */
 body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5; /* Fond gris très clair pour la page */
-    color: #333; /* Texte sombre par défaut */
-    line-height: 1.6; /* Améliore la lisibilité du texte */
+    background-color: #f5f5f5; /* Fond gris très clair */
+    color: #333;
+    line-height: 1.6;
+    height: 100%; /* Assure que le body prend toute la hauteur de la page */
 }
 
 /* Conteneur principal */
 body {
     display: flex;
-    min-height: 100vh;
+    min-height: 100vh; /* Prend toute la hauteur de la vue */
 }
 
-/* Style de la navbar */
+/* Sidebar (menu de navigation à gauche) */
 .header {
-    width: 250px; /* Largeur de la navbar */
-    background-color: #ffffff; /* Fond blanc */
-    color: #333; /* Texte sombre */
-    padding: 20px;
+    width: 250px; /* Largeur fixe */
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px;
     box-sizing: border-box;
-    position: fixed;
-    height: 100vh;
+    height: 100vh; /* Prend toute la hauteur de la vue */
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-right: 1px solid #e0e0e0; /* Bordure grise claire */
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); /* Ombre portée subtile */
+    border-right: 1px solid #e0e0e0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    position: fixed; /* Fixe la sidebar à gauche */
+    left: 0;
+    top: 0;
 }
 
-/* Style de l'image de l'utilisateur */
+/* Style du profil utilisateur dans la sidebar */
 .user img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin-bottom: 15px;
-    border: 3px solid #007BFF; /* Bordure bleue plus épaisse */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Transition fluide */
+    border: 3px solid #007BFF;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .user img:hover {
-    transform: scale(1.05); /* Légère animation au survol */
-    border-color: #0056b3; /* Bordure bleue plus foncée au survol */
+    transform: scale(1.05);
+    border-color: #0056b3;
 }
 
 .user h2 {
-    color: #007BFF; /* Texte bleu */
-    margin: 10px 0 5px;
-    font-size: 1.5rem; /* Taille de police plus grande */
+    color: #007BFF;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
 .user p {
-    color: #666; /* Texte gris */
-    font-size: 0.9rem; /* Taille de police plus petite */
+    color: #666;
+    font-size: 0.9rem;
 }
 
-/* Style des liens de la navbar */
+/* Navbar liens */
 .navbar {
     display: flex;
-    flex-direction: column; /* Alignement vertical */
+    flex-direction: column;
     width: 100%;
-    margin-top: 20px; /* Espacement depuis le haut */
+    margin-top: 10px;
 }
 
 .navbar a {
-    color: #333; /* Texte sombre */
+    color: #007BFF; /* Couleur des liens */
     text-decoration: none;
-    padding: 4px 5px; /* Espacement interne */
+    padding: 8px 12px;
     display: flex;
     align-items: center;
-    margin: 8px 0; /* Espacement entre les liens */
-    border-radius: 8px; /* Coins arrondis */
-    transition: all 0.3s ease; /* Transition fluide */
-    background-color: #f9f9f9; /* Fond gris très clair */
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
 }
 
 .navbar a i {
-    margin-right: 10px; /* Espacement entre l'icône et le texte */
-    font-size: 1.1rem; /* Taille des icônes */
-    color: #666; /* Couleur des icônes */
+    margin-right: 10px;
+    font-size: 1.1rem;
+    color: #007BFF; /* Couleur des icônes */
 }
 
 .navbar a:hover {
-    background-color: #007BFF; /* Fond bleu au survol */
+    background-color: #007BFF; /* Fond au survol */
     color: #ffffff; /* Texte blanc au survol */
-    transform: translateX(5px); /* Légère translation à droite */
+    transform: translateX(5px);
 }
 
 .navbar a:hover i {
@@ -94,7 +96,7 @@ body {
 }
 
 .navbar a.active {
-    background-color: #007BFF; /* Fond bleu pour le lien actif */
+    background-color: #007BFF; /* Fond pour le lien actif */
     color: #ffffff; /* Texte blanc pour le lien actif */
 }
 
@@ -102,255 +104,90 @@ body {
     color: #ffffff; /* Icônes blanches pour le lien actif */
 }
 
-/* Contenu principal */
+/* Contenu principal (centré) */
 .main-content {
-    margin-left: 250px; /* Marge à gauche égale à la largeur de la navbar */
-    width: calc(100% - 250px); /* Largeur du contenu moins la largeur de la navbar */
+    margin-left: 250px; /* Décalage par rapport à la sidebar */
+    width: calc(100% - 250px); /* Largeur du contenu ajustée */
     box-sizing: border-box;
     padding: 30px;
-}
-
-/* Style des sections */
-.home:hover,.home, .portfolio, .nouveauProjet {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 40px; /* Espacement entre les sections */
-    background-color: #ffffff; /* Fond blanc pour chaque section */
-    padding: 25px;
-    border-radius: 12px; /* Coins arrondis */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre portée pour un effet de carte */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide */
-    border: 1px solid #e0e0e0; /* Bordure subtile */
-}
-
-/* Effet de survol pour les sections */
- .portfolio:hover, .nouveauProjet:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
-}
-
-/* Style des images dans les sections */
-.home-img img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px; /* Coins arrondis pour l'image */
-}
-
-/* Style des boutons */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #007BFF; /* Fond bleu */
-    color: white; /* Texte blanc */
-    text-decoration: none;
-    border-radius: 8px; /* Coins arrondis */
-    margin-top: 15px;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition fluide */
-    font-size: 1rem;
-}
-
-.btn:hover {
-    background-color: #0056b3; /* Fond bleu foncé au survol */
-    transform: translateY(-2px); /* Légère élévation au survol */
-}
-
-/* Style du formulaire */
-.portfolio-form {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff; /* Fond blanc */
-    border-radius: 10px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-    font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease; /* Transition fluide */
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #007BFF; /* Bordure bleue au focus */
-    outline: none;
-}
-
-.portfolio-form .btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.portfolio-form .btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px); /* Légère élévation au survol */
-}
-
-/* Style pour le texte dynamique */
-span {
-    color: #007BFF; /* Texte bleu */
-    font-weight: bold;
-}
-
-/* Style pour les titres */
-.heading {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #007BFF; /* Texte bleu */
-    font-size: 1.8rem; /* Taille de police plus grande */
-}
-
-/* Style pour le texte About Us */
-.about-content p {
-    text-align: justify;
-    line-height: 1.8; /* Espacement des lignes amélioré */
-    color: #555; /* Texte gris foncé */
-    font-size: 1rem;
-}
-
-/* Style pour la section Nouveau Projet */
-.nouveauProjet {
-    text-align: center;
-    padding: 25px;
-    background-color: #ffffff; /* Fond blanc */
+    background-color: #ffffff;
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu horizontalement */
+    justify-content: center; /* Centre le contenu verticalement */
+    min-height: 100vh; /* Prend toute la hauteur de la vue */
 }
 
-.nouveauProjet p {
-    color: #666;
-    font-size: 1rem;
-}
-/* Contenu principal */
-.main-content {
-    margin-left: 250px; /* Marge à gauche égale à la largeur de la navbar */
-    width: calc(100% - 250px); /* Largeur du contenu moins la largeur de la navbar */
-    box-sizing: border-box;
-    padding: 30px;
-    background-color: #ffffff; /* Fond blanc */
-    border-radius: 12px; /* Coins arrondis */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-    transition: all 0.3s ease; /* Transition fluide */
-}
-
-/* Style pour le titre de la section */
-.main-content h2 {
-    color: #007BFF; /* Texte bleu */
-    font-size: 1.8rem; /* Taille de police plus grande */
-    margin-bottom: 20px; /* Espacement en bas */
-    font-weight: 600; /* Texte en gras */
-    text-align: center; /* Centrer le texte */
-    position: relative; /* Pour l'effet de soulignement */
-}
-
-.main-content h2::after {
-    content: '';
-    display: block;
-    width: 60px; /* Largeur de la ligne */
-    height: 3px; /* Épaisseur de la ligne */
-    background-color: #007BFF; /* Couleur de la ligne */
-    margin: 10px auto 0; /* Centrer la ligne */
-    border-radius: 2px; /* Coins arrondis pour la ligne */
-}
-
-/* Style pour les informations utilisateur */
+/* Style du profil utilisateur */
 .user-profile {
-    background-color: #f9f9f9; /* Fond gris très clair */
-    padding: 20px;
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Ombre subtile */
-    margin-bottom: 20px; /* Espacement en bas */
-    transition: all 0.3s ease; /* Transition fluide */
+    width: 100%;
+    max-width: 600px; /* Largeur maximale pour une meilleure lisibilité */
+    text-align: center;
 }
 
-.user-profile:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Ombre plus prononcée au survol */
+.user-profile h2 {
+    color: #007BFF;
+    margin-bottom: 10px; /* Réduire la marge inférieure */
+    font-size: 2rem;
 }
 
 .user-profile p {
-    font-size: 1rem; /* Taille de police */
-    color: #333; /* Texte sombre */
-    margin-bottom: 10px; /* Espacement entre les paragraphes */
-    line-height: 1.6; /* Espacement des lignes amélioré */
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px; /* Réduire la marge entre les paragraphes */
+    line-height: 1.6;
 }
 
 .user-profile p strong {
-    color: #007BFF; /* Texte bleu pour les labels */
-    font-weight: 600; /* Texte en gras */
+    color: #007BFF;
+    font-weight: 600;
 }
 
 .user-profile img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* Coins arrondis pour l'image */
-    margin-top: 15px; /* Espacement en haut */
-    display: block; /* Centrer l'image */
+    border-radius: 10px;
+    margin-top: 10px; /* Réduire la marge supérieure de l'image */
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    transition: transform 0.3s ease; /* Transition fluide */
+    transition: transform 0.3s ease;
 }
 
 .user-profile img:hover {
-    transform: scale(1.05); /* Légère animation au survol */
-}
-
-/* Style pour le message "Aucune information utilisateur disponible" */
-.user-profile div p {
-    text-align: center; /* Centrer le texte */
-    color: #666; /* Texte gris */
-    font-style: italic; /* Texte en italique */
-    margin: 0; /* Supprimer la marge par défaut */
-}
-
-/* Effet de survol pour la section .main-content */
-.main-content:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
-    transform: translateY(-2px); /* Légère élévation au survol */
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header {
+        width: 100%; /* La sidebar prend toute la largeur */
+        height: auto; /* Hauteur automatique */
+        position: relative; /* Plus fixe */
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: row; /* Les liens en ligne */
+        flex-wrap: wrap; /* Permet le retour à la ligne */
+        justify-content: center;
+    }
+
+    .navbar a {
+        margin: 5px;
+        padding: 6px 10px;
+    }
+
     .main-content {
-        margin-left: 0; /* Pas de marge à gauche sur les petits écrans */
-        width: 100%; /* Prend toute la largeur */
-        padding: 20px; /* Espacement interne réduit */
+        margin-left: 0; /* Pas de marge à gauche */
+        width: 100%;
+        padding: 20px;
     }
 
-    .user-profile {
-        padding: 15px; /* Espacement interne réduit */
-    }
-
-    .main-content h2 {
-        font-size: 1.5rem; /* Taille de police réduite */
-    }
-
-    .main-content h2::after {
-        width: 40px; /* Largeur réduite de la ligne */
-        height: 2px; /* Épaisseur réduite de la ligne */
+    .user-profile h2 {
+        font-size: 1.5rem;
     }
 }

@@ -1,73 +1,126 @@
-/* General Styles */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Général */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     color: #333;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+    line-height: 1.6;
 }
 
 /* Header */
-.header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background-color: #333;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #005f99, #0096c7);
     color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px 12px 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.header .log {
-    font-size: 1.5em;
+header div {
+    font-size: 1.8em;
     font-weight: bold;
 }
 
-.header .navbar {
+header nav {
     display: flex;
     align-items: center;
 }
 
-.header .navbar a {
+header nav a {
     color: #fff;
     margin-left: 20px;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.2s;
+    font-size: 1.1em;
+    font-weight: 500;
 }
 
-.header .navbar a:hover {
-    color: #3498db;
+header nav a:hover {
+    color: #ffdd57;
+    transform: scale(1.1);
 }
 
-#menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
+main {
+    padding: 10px 10%;
+    text-align: center;
 }
 
-/* Login Section */
-section {
+main h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #005f99;
+    font-weight: 600;
+    text-align: center;
+}
+
+main h1 span {
+    color: #0096c7;
+}
+
+/* Section Formulaire */
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
     padding: 20px;
+    text-align: center;
 }
 
-span{
-    color: #3498db;
-}
-
-form {
-    max-width: 400px;
+.login-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
     width: 100%;
+    max-width: 1200px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Effet au survol du bloc */
+.login-section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Formulaire (à gauche) */
+.form-left {
+    width: 50%;
+}
+
+/* Image (à droite) */
+.form-right {
+    width: 50%;
+}
+
+.login-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.login-img:hover {
+    transform: scale(1.05);
+}
+
+/* Formulaire (dans .form-left) */
+form {
     padding: 30px;
     background-color: #fff;
     border-radius: 15px;
@@ -131,19 +184,21 @@ form p a:hover {
 }
 
 /* Footer */
-.footer {
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: #333;
+    background: linear-gradient(135deg, #005f99, #0096c7);
     color: #fff;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px 12px 0 0;
 }
 
 .footer-text {
     text-align: left;
     flex: 1;
+    font-size: 1.1em;
 }
 
 .footer-icon {
@@ -155,56 +210,27 @@ form p a:hover {
     color: #fff;
     font-size: 2em;
     display: inline-block;
-    margin-top: 10px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .footer-icon a:hover {
-    color: #3498db;
+    color: #ffdd57;
+    transform: scale(1.2);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .header {
-        flex-wrap: wrap;
+    /* Section Login (forme et image en colonne) */
+    .login-section {
+        flex-direction: column;
+        text-align: center;
     }
 
-    #menu-icon {
-        display: block;
-    }
-
-    .navbar {
-        display: none;
+    .form-left, .form-right {
         width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: #333;
-        padding: 10px;
     }
 
-    .navbar a {
-        margin: 10px 0;
-    }
-
-    section {
-        padding: 10px;
-    }
-
-    form {
-        padding: 20px;
-    }
-
-    .footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-text {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .footer-icon {
-        text-align: center;
+    .login-img {
+        margin-top: 20px;
     }
 }

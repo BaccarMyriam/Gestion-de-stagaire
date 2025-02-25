@@ -10,7 +10,7 @@
     <!-- Header -->
     <header class="header">
         <div class="log">AddInn</div>
-        <i class='bx bx-menu' id="menu-icon"></i>
+        
         <nav class="navbar">
             <a routerLink="/dashbordPrincipale">Home</a>
             <a routerLink="/about">About us</a>
@@ -24,20 +24,27 @@
     </header>
     <!-- End Header -->
 
+    
     <!-- Register Section -->
-    <section class="form-container">
-        <form class="register-form" (ngSubmit)="onSubmit()" #registerForm="ngForm" enctype="multipart/form-data">
-            <h1>Register <span>now</span></h1>
-            <input type="text" name="cin" id="cin" placeholder="CIN" [(ngModel)]="user.cin" required>
-            <input type="text" name="name" id="name" placeholder="Full Name" [(ngModel)]="user.name" required>
-            <input type="email" name="email" id="email" placeholder="Your Email" [(ngModel)]="user.email" required>
-            <input type="password" name="password" id="password" placeholder="Your Password" [(ngModel)]="user.password" required>
-            <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" [(ngModel)]="user.cpassword" required>
-            <input type="file" name="image" id="image" placeholder="Your Image" (change)="onFileChange($event)" required>
-            <input type="submit" value="Register" name="submit-btn" class="btn">
-            <p>Already have an account? <a routerLink="/login">Login now</a></p>
-        </form>
-    </section>
+<section class="form-container">
+    <main>
+        <h1>Inscrivez-vous <span>maintenant</span></h1>
+        <div class="register-section">
+            <img src="assets/images/signup.avif" alt="" class="register-image">
+            <form class="register-form" (ngSubmit)="onSubmit()" #registerForm="ngForm" enctype="multipart/form-data">
+                <input type="text" name="cin" id="cin" placeholder="CIN" [(ngModel)]="user.cin" required>
+                <input type="text" name="name" id="name" placeholder="Full Name" [(ngModel)]="user.name" required>
+                <input type="email" name="email" id="email" placeholder="Votre Email" [(ngModel)]="user.email" required>
+                <input type="password" name="password" id="password" placeholder="Votre Password" [(ngModel)]="user.password" required>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" [(ngModel)]="user.cpassword" required>
+                <input type="file" name="image" id="image" placeholder="Votre Image" (change)="onFileChange($event)" required>
+                <input type="submit" value="Register" name="submit-btn" class="btn">
+                <p>Vous avez déjà un compte ? <a routerLink="/login">Connectez-vous maintenant</a></p>
+            </form>
+        </div>
+    </main>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">

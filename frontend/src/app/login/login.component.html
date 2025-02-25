@@ -10,7 +10,7 @@
     <!-- Header -->
     <header class="header">
         <div class="log">AddInn</div>
-        <i class='bx bx-menu' id="menu-icon"></i>
+       
         <nav class="navbar">
             <a routerLink="/dashbordPrincipale">Home</a>
             <a routerLink="/about">About us</a>
@@ -26,27 +26,40 @@
 
     <!-- Login Section -->
     <section class="form-container">
-        <form class="login-form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
-            <h1>Log in</h1>
-            <input 
-                type="text" 
-                [(ngModel)]="log.cin" 
-                name="cin" 
-                placeholder="Your CIN" 
-                required>
-            <input 
-                type="password" 
-                [(ngModel)]="log.password" 
-                name="password" 
-                placeholder="Your Password" 
-                required>
-            <button type="submit" class="btn">Login</button>
-            <p>
-                Don't have an account?
-                <a routerLink="/register">Register now</a>
-            </p>
-        </form>
+        <main>
+            <h1>Connectez-vous <span>maintenant</span></h1>
+            <div class="login-section">
+                <!-- Formulaire à gauche -->
+                <div class="form-left">
+                    <form class="login-form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                        <input 
+                            type="text" 
+                            [(ngModel)]="log.cin" 
+                            name="cin" 
+                            placeholder="Your CIN" 
+                            required>
+                        <input 
+                            type="password" 
+                            [(ngModel)]="log.password" 
+                            name="password" 
+                            placeholder="Your Password" 
+                            required>
+                        <button type="submit" class="btn">Login</button>
+                        <p>
+                            Vous n'avez pas de compte ?
+                            <a routerLink="/register">Inscrivez-vous maintenant</a>
+                        </p>
+                    </form>
+                </div>
+    
+                <!-- Image à droite -->
+                <div class="form-right">
+                    <img src="assets/images/login.jpg" alt="Login Image" class="login-img">
+                </div>
+            </div>
+        </main>
     </section>
+    
     <!-- End Login Section -->
 
     <!-- Footer -->

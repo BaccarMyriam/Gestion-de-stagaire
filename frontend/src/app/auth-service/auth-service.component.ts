@@ -278,5 +278,51 @@ updateReponse(cin: string, reponse: string): Observable<any> {
         headers: { 'Content-Type': 'application/json' }
       });
     }
+    // Methode pour ajouter resultat de stage
+      private apiUrlMessage = 'http://localhost/Backend-Addinn/api/admin/updateMessage.php';
+
+      updateUserMessage(data: any): Observable<any> {
+        return this.http.post<any>(this.apiUrlMessage, data);
+      }
+      // Methode pour ajouter note de stage
+      private apiUrlNote = 'http://localhost/Backend-Addinn/api/admin/updateNote.php';
+
+      updateUserNote(data: any): Observable<any> {
+       return this.http.post<any>(this.apiUrlNote, data);
+      }
+      // Methode pour ajouter attestation de stage 
+      private apiUrlAttestation = 'http://localhost/Backend-Addinn/api/admin/updateAttestation.php';
     
+      updateUserAttestation(data: FormData): Observable<any> {
+        return this.http.post<any>(this.apiUrlAttestation, data);
+      }
+     // Méthode pour récupérer le CIN de l'utilisateur connecté
+  getUser(): string | null {
+    return localStorage.getItem('loggedInUser');  // Récupère le CIN stocké dans le localStorage
+  }
+
+  // Méthode pour récupérer les informations du stagiaire
+  private userInfoStagiaire = 'http://localhost/Backend-Addinn/api/admin/evalutionStagiaire.php';  // URL API
+
+  async getStagiaireInfo(cin: string): Promise<any> {
+    try {
+      console.log(`Requête vers : ${this.userInfoStagiaire}?cin=${cin}`);
+
+      const response = await fetch(`${this.userInfoStagiaire}?cin=${cin}`);
+      const data = await response.json();
+
+      if (data.success) {
+        console.log('Données du stagiaire récupérées :', data.user);
+        return data.user;
+      } else {
+        console.error('Erreur:', data.message);
+        return null;
+      }
+    } catch (error) {
+      console.error('Erreur lors de la récupération des données :', error);
+      return null;
+    }
+  }
 }
+
+  

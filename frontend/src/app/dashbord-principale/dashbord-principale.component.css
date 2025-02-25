@@ -1,31 +1,71 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 /* Général */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
-h1, h2, h3 {
-    margin: 0;
-    padding: 0;
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #005f99, #0096c7);
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px 12px 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-h3 {
-    font-size: 1.5em;
+header div {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.2s;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    color: #ffdd57;
+    transform: scale(1.1);
+}
+
+main {
+    padding: 10px 10%;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #005f99;
     font-weight: 600;
+    text-align: center;
 }
 
-h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-}
-
-span {
-    color: #3498db;
+main h1 span {
+    color: #0096c7;
 }
 
 .btn {
@@ -44,44 +84,6 @@ span {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.header .log {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.header .navbar {
-    display: flex;
-    align-items: center;
-}
-
-.header .navbar a {
-    color: #fff;
-    margin-left: 20px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.header .navbar a:hover {
-    color: #3498db;
-}
-
-#menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
 }
 
 /* Home Section */
@@ -143,19 +145,21 @@ span {
 }
 
 /* Footer */
-.footer {
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: #333;
+    background: linear-gradient(135deg, #005f99, #0096c7);
     color: #fff;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px 12px 0 0;
 }
 
 .footer-text {
     text-align: left;
     flex: 1;
+    font-size: 1.1em;
 }
 
 .footer-icon {
@@ -167,13 +171,76 @@ span {
     color: #fff;
     font-size: 2em;
     display: inline-block;
-    margin-top: 10px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .footer-icon a:hover {
-    color: #3498db;
+    color: #ffdd57;
+    transform: scale(1.2);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #333;
+        padding: 10px;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    .register-form {
+        padding: 20px;
+    }
+
+    .register-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .register-section .content {
+        flex-direction: column;  /* Empile l'image et le formulaire sur les petits écrans */
+        align-items: center;
+    }
+
+    .register-section img {
+        margin-bottom: 20px;
+    }
+
+    main img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-text {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-icon {
+        text-align: center;
+    }
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -26,6 +26,11 @@ import { AjoutReponseComponent } from './ajout-reponse/ajout-reponse.component';
 import { RemarqueComponent } from './remarque/remarque.component';
 import { EtatprojetComponent } from './etatprojet/etatprojet.component';
 import { FeedReponseComponent } from './feed-reponse/feed-reponse.component';
+import { EvalutionComponent } from './evalution/evalution.component';
+import { NoteComponent } from './note/note.component';
+import { ResltadminComponent } from './resltadmin/resltadmin.component';
+import { AttestationComponent } from './attestation/attestation.component';
+import { EvaluationStagaireComponent } from './evaluation-stagaire/evaluation-stagaire.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashbordPrincipale', pathMatch: 'full' }, // Redirection par défaut
@@ -56,4 +61,9 @@ export const routes: Routes = [
   { path: 'feed-reponse/:email', component: FeedReponseComponent },
   { path: 'remarque/:cin', component: RemarqueComponent },
   { path: 'etatprojet/:cin', component: EtatprojetComponent },
+  { path: 'evalution', component: EvalutionComponent },
+  { path: 'note/:cin', component: NoteComponent },
+  { path: 'attestation/:cin', component: AttestationComponent },
+  {path: 'evaluation-stagiaire', component: EvaluationStagaireComponent },
+  { path: 'resultadmin/:cin', component: ResltadminComponent },  // Route dynamique pour ResultAdmin
 ];

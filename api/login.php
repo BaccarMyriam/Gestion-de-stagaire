@@ -6,7 +6,7 @@ $password = ""; // Mot de passe MySQL (vide si aucun)
 $dbname = "addinn_db"; // Nom de la base de données
 
 // Définir les en-têtes CORS pour permettre l'accès depuis Angular
-header("Access-Control-Allow-Origin: http://localhost:4200"); // Autoriser l'application Angular
+header("Access-Control-Allow-Origin: *"); // Autoriser l'application Angular
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS"); // Méthodes autorisées
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 

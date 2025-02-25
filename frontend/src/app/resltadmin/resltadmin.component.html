@@ -1,0 +1,8 @@
+<form (ngSubmit)="submitMessage()">
+    <label for="message">Entrez votre message :</label>
+    <textarea id="message" [(ngModel)]="message" name="message" rows="4" cols="50" required></textarea>
+
+    <br>
+    <button type="submit">Envoyer</button>
+    <a routerLink="/evalution" class="btn">Retour</a>
+</form>

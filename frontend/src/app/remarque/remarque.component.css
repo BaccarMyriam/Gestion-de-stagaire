@@ -12,7 +12,24 @@
   .form-group {
     margin-bottom: 15px;
   }
-  
+  /* Style du bouton Retour */
+a.btn {
+  display: inline-block;
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+a.btn:hover {
+  background-color: #5a6268;
+}
   textarea {
     width: 100%;
     padding: 10px;

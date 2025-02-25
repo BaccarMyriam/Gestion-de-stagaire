@@ -10,7 +10,7 @@
     <!-- Header -->
     <header class="header">
         <div class="log">AddInn</div>
-        <i class='bx bx-menu' id="menu-icon"></i>
+        
         <nav class="navbar">
             <a routerLink="/dashbordPrincipale">Home</a>
             <a routerLink="/about">About us</a>
@@ -23,63 +23,69 @@
         </nav>
     </header>
     <!-- End Header -->
-<form (ngSubmit)="onSubmit()">
-    <h1>Demande <span>de stage</span></h1>
-    <div class="input-form">
-        
-        <input type="text" id="cin" [(ngModel)]="form['cin']" name="cin" placeholder="Votre cin" required>
+    
+    <main>
+        <!-- Title -->
+        <h1>Demande <span>de stage</span></h1>
 
-       
-        <input type="text" id="nom" [(ngModel)]="form['nom']" name="nom" placeholder="Votre nom" required>
+        <!-- Form and Image Section -->
+        <div class="form-image-wrapper">
+            <div class="input-form">
+                <form (ngSubmit)="onSubmit()">
+                    <input type="text" id="cin" [(ngModel)]="form['cin']" name="cin" placeholder="Votre cin" required>
+                    <input type="text" id="nom" [(ngModel)]="form['nom']" name="nom" placeholder="Votre nom" required>
+                    <input type="email" id="email" [(ngModel)]="form['email']" name="email" placeholder="Votre email" required>
+                    <input type="tel" id="tel" [(ngModel)]="form['tel']" name="tel" placeholder="Votre téléphone" required>
 
-        
-        <input type="email" id="email" [(ngModel)]="form['email']" name="email" placeholder="Votre email" required>
+                    <label for="cv">CV</label>
+                    <input type="file" id="cv" (change)="onFileChange($event, 'cv')" required>
 
-        
-        <input type="tel" id="tel" [(ngModel)]="form['tel']" name="tel" placeholder="Votre téléphone" required>
+                    <label for="lettre">Demande de stage</label>
+                    <input type="file" id="lettre" (change)="onFileChange($event, 'lettre')" required>
 
-        <label for="cv">CV</label>
-        <input type="file" id="cv" (change)="onFileChange($event, 'cv')" required>
+                    <label for="convention">Convention de stage</label>
+                    <input type="file" id="convention" (change)="onFileChange($event, 'convention')" required>
 
-        <label for="lettre">Demande de stage</label>
-        <input type="file" id="lettre" (change)="onFileChange($event, 'lettre')" required>
+                    <label for="stage">Types de stage</label>
+                    <select id="stage" [(ngModel)]="selectedStage" (change)="onStageChange()" name="stage">
+                        <option value="init">Initiation</option>
+                        <option value="perf">Perfectionnement</option>
+                        <option value="pfe">PFE</option>
+                        <option value="db">Data & BI</option>
+                        <option value="soft">Software</option>
+                    </select>
 
-        <label for="convention">Convention de stage</label>
-        <input type="file" id="convention" (change)="onFileChange($event, 'convention')" required>
+                    <!-- Conteneur des projets dynamiques -->
+                    <div *ngIf="projects.length > 0" id="projects-container">
+                        <p>Choisissez un projet :</p>
+                        <label *ngFor="let project of projects">
+                            <input type="radio" name="project" [value]="project" [(ngModel)]="form['project']">
+                            {{ project }}
+                        </label>
+                    </div>
 
-        <label for="stage">Types de stage</label>
-        <select id="stage" [(ngModel)]="selectedStage" (change)="onStageChange()" name="stage">
-            <option value="init">Initiation</option>
-            <option value="perf">Perfectionnement</option>
-            <option value="pfe">PFE</option>
-            <option value="db">Data & BI</option>
-            <option value="soft">Software</option>
-        </select>
+                    <button type="submit" class="btn">Demande</button>
+                    <a routerLink="/ajout-projet" class="btn">Ajouter Projet</a>
+                </form>
+            </div>
 
-        <!-- Conteneur des projets dynamiques -->
-        <div *ngIf="projects.length > 0" id="projects-container">
-            <p>Choisissez un projet :</p>
-            <label *ngFor="let project of projects">
-                <input type="radio" name="project" [value]="project" [(ngModel)]="form['project']">
-                {{ project }}
-            </label>
+            <div class="image-container">
+                <img src="assets/images/demande.jpg" alt="Demande de stage" class="register-image">
+            </div>
         </div>
-
-        <button type="submit" class="btn">Demande </button>
-        <a routerLink="/ajout-projet" class="btn">Ajouter Projet</a>
-    </div>
-</form>
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-text">
-        <p>©2023 ADDINN Group. Tous droits réservés</p>
-    </div>
-    <div class="footer-icon">
-        <a routerLink="/dashbordPrincipale">
-            <i class='bx bx-up-arrow-circle'></i>
-        </a>
-    </div>
-</footer>
-<!-- End Footer -->
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>©2023 ADDINN Group. Tous droits réservés</p>
+        </div>
+        <div class="footer-icon">
+            <a routerLink="/dashbordPrincipale">
+                <i class='bx bx-up-arrow-circle'></i>
+            </a>
+        </div>
+    </footer>
+    <!-- End Footer -->
 </body>
 </html>

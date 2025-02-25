@@ -1,23 +1,70 @@
-/* Général */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 1.6;
-    background-color: #f9f9f9;
+}
+
+/* Général */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
-h2.heading {
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #005f99, #0077b6);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+header nav a:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+main {
+    padding: 10px 10%;
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    font-weight: 700;
 }
 
-h2.heading span {
-    color: #3498db;
+main h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #005f99;
+    font-weight: 600;
+    text-align: center;
+}
+
+main h1 span {
+    color: #0096c7;
 }
 
 .btn {
@@ -36,44 +83,6 @@ h2.heading span {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.header .log {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.header .navbar {
-    display: flex;
-    align-items: center;
-}
-
-.header .navbar a {
-    color: #fff;
-    margin-left: 20px;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.header .navbar a:hover {
-    color: #3498db;
-}
-
-#menu-icon {
-    display: none;
-    font-size: 2em;
-    cursor: pointer;
 }
 
 /* Offre Section */
@@ -138,19 +147,21 @@ h2.heading span {
 }
 
 /* Footer */
-.footer {
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px;
-    background-color: #333;
+    background: linear-gradient(135deg, #005f99, #0096c7);
     color: #fff;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px 12px 0 0;
 }
 
 .footer-text {
     text-align: left;
     flex: 1;
+    font-size: 1.1em;
 }
 
 .footer-icon {
@@ -162,12 +173,12 @@ h2.heading span {
     color: #fff;
     font-size: 2em;
     display: inline-block;
-    margin-top: 10px;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .footer-icon a:hover {
-    color: #3498db;
+    color: #ffdd57;
+    transform: scale(1.2);
 }
 
 /* Responsive Design */
